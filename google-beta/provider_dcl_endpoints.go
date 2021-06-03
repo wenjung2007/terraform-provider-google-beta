@@ -27,11 +27,23 @@ var EventarcEndpointEntry = &schema.Schema{
 	}, ""),
 }
 
+var GkeHubEndpointEntryKey = "gke_hub_custom_endpoint"
+var GkeHubEndpointEntry = &schema.Schema{
+	Type:     schema.TypeString,
+	Optional: true,
+	DefaultFunc: schema.MultiEnvDefaultFunc([]string{
+		"GOOGLE_GKE_HUB_CUSTOM_ENDPOINT",
+	}, ""),
+}
+
 //Add new values to config.go.erb config object declaration
 //EventarcBasePath string
+//GkeHubBasePath string
 
 //Add new values to provider.go.erb schema initialization
 // EventarcEndpointEntryKey:               EventarcEndpointEntry,
+// GkeHubEndpointEntryKey:               GkeHubEndpointEntry,
 
 //Add new values to provider.go.erb - provider block read
 // config.EventarcBasePath = d.Get(EventarcEndpointEntryKey).(string)
+// config.GkeHubBasePath = d.Get(GkeHubEndpointEntryKey).(string)
