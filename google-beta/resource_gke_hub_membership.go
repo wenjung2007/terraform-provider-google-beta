@@ -46,7 +46,7 @@ func resourceGKEHubMembership() *schema.Resource {
 				Type:        schema.TypeString,
 				Required:    true,
 				ForceNew:    true,
-				Description: `The client-provided identifier of the membership.`,
+				Description: `The client-provided identifier of the membershipAAAAAA.`,
 			},
 			"authority": {
 				Type:     schema.TypeList,
